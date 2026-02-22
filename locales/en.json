@@ -61,7 +61,10 @@
         "haveAccount": "Already have an account?",
         "noAccount": "Don't have an account?",
         "loginLink": "Login here",
-        "signupLink": "Sign up here"
+        "signupLink": "Sign up here",
+        "orContinue": "Or continue with",
+        "google": "Google",
+        "facebook": "Facebook"
     },
     "profile": {
         "title": "My Profile",

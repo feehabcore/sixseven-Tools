@@ -62,7 +62,7 @@ A powerful all-in-one media toolkit providing Watermark Removal, Social Media Do
 - Node.js 18 or higher
 - npm or yarn packet manager
 - MongoDB instance (local or MongoDB Atlas)
-- (Optional) Google/Facebook OAuth credentials for social login
+
 
 ## 🚀 Installation & Setup
 
@@ -98,16 +98,8 @@ MONGODB_URI=mongodb://localhost:27017/six7even-tools
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your-generated-secret-here
 
-# OAuth Providers (optional)
-GOOGLE_CLIENT_ID=your-id
-GOOGLE_CLIENT_SECRET=your-secret
-
-FACEBOOK_CLIENT_ID=your-id
-FACEBOOK_CLIENT_SECRET=your-secret
-
-# Optional APIs
+# Optional: Image Processing API
 REMOVE_BG_API_KEY=your-key-for-advanced-watermark-removal
-RAPIDAPI_KEY=your-rapidapi-key
 ```
 
 ### 4. Generate NextAuth Secret
@@ -369,11 +361,7 @@ npm start
 | `MONGODB_URI` | Yes | MongoDB connection string |
 | `NEXTAUTH_URL` | Yes | Your app URL (e.g., http://localhost:3000) |
 | `NEXTAUTH_SECRET` | Yes | Secret key for NextAuth (generate with openssl) |
-| `GOOGLE_CLIENT_ID` | No | Google OAuth client ID |
-| `GOOGLE_CLIENT_SECRET` | No | Google OAuth client secret |
-| `FACEBOOK_CLIENT_ID` | No | Facebook app ID |
-| `FACEBOOK_CLIENT_SECRET` | No | Facebook app secret |
-| `RAPIDAPI_KEY` | No | RapidAPI key for TikTok/Instagram (future) |
+| `REMOVE_BG_API_KEY` | No | Remove.bg API key for advanced watermark removal |
 
 ## Project Structure
 
@@ -446,7 +434,7 @@ d:/kurelFLOW/
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Watermark Removal | ✅ Working | Basic implementation with Sharp |
+| Watermark Removal | ✅ Working | Content-aware removal with Sharp |
 | YouTube Download | ✅ Working | MP4 and MP3 support |
 | TikTok Download | 🚧 Placeholder | Requires RapidAPI integration |
 | Instagram Download | 🚧 Placeholder | Requires API/scraping setup |
@@ -454,8 +442,7 @@ d:/kurelFLOW/
 | Pinterest Download | 🚧 Placeholder | Requires API/scraping setup |
 | Instagram Stalker | ✅ Working | Demo data (requires API for real data) |
 | Email Auth | ✅ Working | Signup/Login functional |
-| OAuth (Google/Facebook) | ⚠️ Configured | Requires client IDs |
-| Language Switching | ✅ Working | English and Bengali |
+| Language Support | ✅ Working | English only |
 
 ## Troubleshooting
 
@@ -464,20 +451,10 @@ d:/kurelFLOW/
 - Check firewall settings for Atlas
 - Verify network access in MongoDB Atlas dashboard
 
-### OAuth Not Working
-- Verify client IDs and secrets in `.env.local`
-- Check authorized redirect URIs in Google/Facebook console
-- Ensure `NEXTAUTH_URL` matches your domain
-
 ### YouTube Download Fails
 - Some videos may be restricted or age-gated
 - Try different video URLs
 - Check ytdl-core package is up to date
-
-### Bengali Font Not Loading
-- Ensure font files are in `public/fonts/`
-- Check browser console for font loading errors
-- Fallback to Noto Sans Bengali will be used
 
 ## Legal Disclaimer
 
