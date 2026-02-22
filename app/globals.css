@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bengali Font - Li Ador Noirrit */
+@font-face {
+  font-family: 'Li Ador Noirrit';
+  src: url('/fonts/LiAdorNoirrit-Regular.woff2') format('woff2'),
+       url('/fonts/LiAdorNoirrit-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback Bengali Font - Noto Sans Bengali */
+@font-face {
+  font-family: 'Noto Sans Bengali';
+  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+  font-display: swap;
+}
+
+:root {
+  --bg-dark: #0a0a0f;
+  --bg-card: #13131a;
+  --bg-border: #1f1f28;
+  --accent-blue: #00d4ff;
+  --accent-green: #00ff88;
+  --accent-purple: #b84dff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body.bengali {
+  font-family: 'Li Ador Noirrit', 'Noto Sans Bengali', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a35;
+}
+
+/* Utility Classes */
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+  }
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid var(--accent-blue);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Input Styles */
+.input-field {
+  background-color: var(--bg-card);
+  border: 2px solid var(--bg-border);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+.input-field::placeholder {
+  color: #666;
+}
+
+/* Card Styles */
+.tool-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-5px);
+}

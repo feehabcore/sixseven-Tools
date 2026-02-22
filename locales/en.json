@@ -1,0 +1,91 @@
+{
+    "app": {
+        "title": "Six7even tools",
+        "tagline": "Your All-in-One Media Toolkit",
+        "description": "Remove watermarks, download social media content, and explore Instagram profiles with ease."
+    },
+    "nav": {
+        "home": "Home",
+        "tools": "Tools",
+        "login": "Login",
+        "signup": "Sign Up",
+        "profile": "Profile",
+        "logout": "Logout"
+    },
+    "tools": {
+        "watermark": {
+            "title": "Gemini Watermark Remover",
+            "description": "Remove Gemini watermarks from your images instantly",
+            "uploadBtn": "Upload Image",
+            "removeBtn": "Remove Watermark",
+            "downloadBtn": "Download Image",
+            "processing": "Processing...",
+            "dragDrop": "Drag and drop your image here, or click to browse",
+            "formats": "Supported formats: JPG, PNG, WEBP"
+        },
+        "downloader": {
+            "title": "Social Media Downloader",
+            "description": "Download videos and audio from TikTok, Instagram, YouTube, and more",
+            "placeholder": "Paste video URL here...",
+            "downloadBtn": "Download",
+            "format": "Format",
+            "video": "Video (MP4)",
+            "audio": "Audio (MP3)",
+            "processing": "Downloading...",
+            "platforms": "Supported: TikTok, Instagram, YouTube, Facebook, Pinterest"
+        },
+        "stalker": {
+            "title": "Instagram Stalker",
+            "description": "View detailed Instagram profile information and recent posts",
+            "placeholder": "Enter Instagram username...",
+            "stalkBtn": "Stalk Profile",
+            "loading": "Fetching profile...",
+            "posts": "Posts",
+            "followers": "Followers",
+            "following": "Following",
+            "recentPosts": "Recent Posts"
+        }
+    },
+    "auth": {
+        "signupTitle": "Create Account",
+        "loginTitle": "Welcome Back",
+        "name": "Full Name",
+        "email": "Email Address",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "signupBtn": "Sign Up",
+        "loginBtn": "Login",
+        "orContinue": "Or continue with",
+        "google": "Google",
+        "facebook": "Facebook",
+        "haveAccount": "Already have an account?",
+        "noAccount": "Don't have an account?",
+        "loginLink": "Login here",
+        "signupLink": "Sign up here"
+    },
+    "profile": {
+        "title": "My Profile",
+        "subscription": "Subscription",
+        "free": "Free",
+        "premium": "Premium",
+        "usage": "Usage Statistics",
+        "downloads": "Downloads Today",
+        "upgradeBtn": "Upgrade to Premium"
+    },
+    "errors": {
+        "generic": "Something went wrong. Please try again.",
+        "invalidUrl": "Please enter a valid URL",
+        "invalidFile": "Invalid file format",
+        "fileTooLarge": "File is too large (max 10MB)",
+        "userNotFound": "User not found",
+        "invalidCredentials": "Invalid email or password",
+        "emailExists": "Email already registered",
+        "networkError": "Network error. Please check your connection."
+    },
+    "footer": {
+        "copyright": "© 2026 KUREL FLOW. All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "contact": "Contact"
+    }
+}
