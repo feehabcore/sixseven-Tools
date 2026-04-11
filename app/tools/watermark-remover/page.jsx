@@ -110,25 +110,18 @@ export default function WatermarkRemoverPage() {
         <div className="container mx-auto px-4 py-12">
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-8">
-                    <div className="inline-block p-3 bg-gradient-to-br from-accent-blue to-accent-purple rounded-xl mb-4">
-                        <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none">
-                            <defs>
-                                <linearGradient id="gemini-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stopColor="#4285F4" />
-                                    <stop offset="50%" stopColor="#9B72F2" />
-                                    <stop offset="100%" stopColor="#D96570" />
-                                </linearGradient>
-                            </defs>
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="url(#gemini-gradient)" />
-                            <path d="M2 17L12 22L22 17L12 12L2 17Z" fill="url(#gemini-gradient)" opacity="0.7" />
-                            <path d="M2 12L12 17L22 12" stroke="url(#gemini-gradient)" strokeWidth="2" fill="none" />
+                <div className="text-center mb-12">
+                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" />
+                            <path d="M2 17L12 22L22 17L12 12L2 17Z" opacity="0.7" />
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" fill="none" />
                         </svg>
                     </div>
-                    <h1 className="text-4xl font-bold mb-3 gradient-text">
+                    <h1 className="text-4xl font-bold mb-3 text-gray-900">
                         {t('tools.watermark.title')}
                     </h1>
-                    <p className="text-gray-400">
+                    <p className="text-gray-600">
                         {t('tools.watermark.description')}
                     </p>
                 </div>
@@ -142,13 +135,13 @@ export default function WatermarkRemoverPage() {
                             onDragOver={handleDragOver}
                             onDrop={handleDrop}
                             onClick={() => fileInputRef.current?.click()}
-                            className="border-2 border-dashed border-dark-border rounded-xl p-12 text-center cursor-pointer hover:border-accent-blue transition-colors"
+                            className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center cursor-pointer hover:border-blue-500 transition-colors"
                         >
-                            <div className="text-6xl mb-4">📤</div>
-                            <p className="text-lg mb-2 text-white">
+                            <div className="text-4xl mb-4">📤</div>
+                            <p className="text-lg mb-2 text-gray-900 font-medium">
                                 {t('tools.watermark.dragDrop')}
                             </p>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-gray-600">
                                 {t('tools.watermark.formats')}
                             </p>
                             <input
@@ -167,10 +160,10 @@ export default function WatermarkRemoverPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* Original */}
                                 <div>
-                                    <h3 className="text-sm font-medium mb-2 text-gray-400">
+                                    <h3 className="text-sm font-medium mb-2 text-gray-700">
                                         Original Image
                                     </h3>
-                                    <div className="relative rounded-lg overflow-hidden bg-dark-bg border border-dark-border">
+                                    <div className="relative rounded-lg overflow-hidden bg-gray-50 border border-gray-200">
                                         <img
                                             src={previewUrl}
                                             alt="Original"
@@ -181,10 +174,10 @@ export default function WatermarkRemoverPage() {
 
                                 {/* Processed */}
                                 <div>
-                                    <h3 className="text-sm font-medium mb-2 text-gray-400">
+                                    <h3 className="text-sm font-medium mb-2 text-gray-700">
                                         {processedUrl ? 'Processed Image' : 'Preview'}
                                     </h3>
-                                    <div className="relative rounded-lg overflow-hidden bg-dark-bg border border-dark-border">
+                                    <div className="relative rounded-lg overflow-hidden bg-gray-50 border border-gray-200">
                                         {processedUrl ? (
                                             <img
                                                 src={processedUrl}
@@ -220,7 +213,7 @@ export default function WatermarkRemoverPage() {
                                         </button>
                                         <button
                                             onClick={handleReset}
-                                            className="px-6 py-3 border border-dark-border rounded-lg hover:border-accent-blue transition-colors"
+                                            className="px-6 py-3 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors text-gray-700"
                                         >
                                             Cancel
                                         </button>
@@ -232,7 +225,7 @@ export default function WatermarkRemoverPage() {
                                         </button>
                                         <button
                                             onClick={handleReset}
-                                            className="px-6 py-3 border border-dark-border rounded-lg hover:border-accent-blue transition-colors"
+                                            className="px-6 py-3 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors text-gray-700"
                                         >
                                             Process Another
                                         </button>
@@ -244,21 +237,21 @@ export default function WatermarkRemoverPage() {
                 </div>
 
                 {/* Info Section */}
-                <div className="mt-8 p-6 bg-dark-card/50 border border-dark-border rounded-lg">
-                    <h3 className="text-lg font-semibold mb-3 text-white">
+                <div className="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-lg">
+                    <h3 className="text-lg font-semibold mb-3 text-gray-900">
                         How it works
                     </h3>
-                    <ul className="space-y-2 text-gray-400 text-sm">
+                    <ul className="space-y-2 text-gray-600 text-sm">
                         <li className="flex items-start gap-2">
-                            <span className="text-accent-green mt-0.5">✓</span>
-                            <span>Upload your image with the Gemini watermark</span>
+                            <span className="text-blue-600 mt-0.5 font-semibold">✓</span>
+                            <span>Upload your image with the watermark</span>
                         </li>
                         <li className="flex items-start gap-2">
-                            <span className="text-accent-green mt-0.5">✓</span>
+                            <span className="text-blue-600 mt-0.5 font-semibold">✓</span>
                             <span>Our AI detects and removes the watermark seamlessly</span>
                         </li>
                         <li className="flex items-start gap-2">
-                            <span className="text-accent-green mt-0.5">✓</span>
+                            <span className="text-blue-600 mt-0.5 font-semibold">✓</span>
                             <span>Download your clean image instantly</span>
                         </li>
                     </ul>

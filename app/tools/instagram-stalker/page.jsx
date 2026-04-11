@@ -61,23 +61,16 @@ export default function InstagramStalkerPage() {
         <div className="container mx-auto px-4 py-12">
             <div className="max-w-5xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-8">
-                    <div className="inline-block p-3 bg-gradient-to-br from-accent-purple to-accent-green rounded-xl mb-4">
-                        <svg className="w-10 h-10" viewBox="0 0 24 24" fill="url(#instagram-gradient-header)">
-                            <defs>
-                                <linearGradient id="instagram-gradient-header" x1="0%" y1="100%" x2="100%" y2="0%">
-                                    <stop offset="0%" stopColor="#FD5949" />
-                                    <stop offset="50%" stopColor="#D6249F" />
-                                    <stop offset="100%" stopColor="#285AEB" />
-                                </linearGradient>
-                            </defs>
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="white" />
+                <div className="text-center mb-12">
+                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z" />
                         </svg>
                     </div>
-                    <h1 className="text-4xl font-bold mb-3 gradient-text">
+                    <h1 className="text-4xl font-bold mb-3 text-gray-900">
                         {t('tools.stalker.title')}
                     </h1>
-                    <p className="text-gray-400">
+                    <p className="text-gray-600">
                         {t('tools.stalker.description')}
                     </p>
                 </div>
@@ -108,19 +101,19 @@ export default function InstagramStalkerPage() {
                 {loading && (
                     <div className="text-center py-12">
                         <LoadingSpinner size="lg" />
-                        <p className="text-gray-400 mt-4">{t('tools.stalker.loading')}</p>
+                        <p className="text-gray-600 mt-4">{t('tools.stalker.loading')}</p>
                     </div>
                 )}
 
                 {/* Profile Data */}
                 {profileData && !loading && (
-                    <div className="space-y-6 animate-fade-in">
+                    <div className="space-y-6">
                         {/* Profile Header */}
                         <div className="tool-card">
                             <div className="flex flex-col md:flex-row gap-6 items-start">
                                 {/* Profile Picture */}
                                 <div className="flex-shrink-0">
-                                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-accent-purple">
+                                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-300">
                                         <img
                                             src={profileData.profilePicUrl}
                                             alt={profileData.username}
@@ -132,43 +125,43 @@ export default function InstagramStalkerPage() {
                                 {/* Profile Info */}
                                 <div className="flex-1">
                                     <div className="flex items-center gap-2 mb-2">
-                                        <h2 className="text-2xl font-bold text-white">
+                                        <h2 className="text-2xl font-bold text-gray-900">
                                             {profileData.username}
                                         </h2>
                                         {profileData.isVerified && (
-                                            <span className="text-accent-blue text-xl">✓</span>
+                                            <span className="text-blue-600 text-xl">✓</span>
                                         )}
                                     </div>
-                                    <p className="text-lg text-gray-300 mb-3">
+                                    <p className="text-lg text-gray-700 mb-3">
                                         {profileData.fullName}
                                     </p>
-                                    <p className="text-gray-400 mb-4 whitespace-pre-wrap">
+                                    <p className="text-gray-600 mb-4 whitespace-pre-wrap text-sm">
                                         {profileData.bio}
                                     </p>
 
                                     {/* Stats */}
                                     <div className="flex gap-6">
                                         <div className="text-center">
-                                            <p className="text-2xl font-bold text-white">
+                                            <p className="text-2xl font-bold text-gray-900">
                                                 {formatNumber(profileData.postsCount)}
                                             </p>
-                                            <p className="text-sm text-gray-400">
+                                            <p className="text-sm text-gray-600">
                                                 {t('tools.stalker.posts')}
                                             </p>
                                         </div>
                                         <div className="text-center">
-                                            <p className="text-2xl font-bold text-white">
+                                            <p className="text-2xl font-bold text-gray-900">
                                                 {formatNumber(profileData.followersCount)}
                                             </p>
-                                            <p className="text-sm text-gray-400">
+                                            <p className="text-sm text-gray-600">
                                                 {t('tools.stalker.followers')}
                                             </p>
                                         </div>
                                         <div className="text-center">
-                                            <p className="text-2xl font-bold text-white">
+                                            <p className="text-2xl font-bold text-gray-900">
                                                 {formatNumber(profileData.followingCount)}
                                             </p>
-                                            <p className="text-sm text-gray-400">
+                                            <p className="text-sm text-gray-600">
                                                 {t('tools.stalker.following')}
                                             </p>
                                         </div>
@@ -179,14 +172,14 @@ export default function InstagramStalkerPage() {
 
                         {/* Recent Posts */}
                         <div className="tool-card">
-                            <h3 className="text-xl font-bold mb-4 text-white">
+                            <h3 className="text-xl font-bold mb-4 text-gray-900">
                                 {t('tools.stalker.recentPosts')}
                             </h3>
                             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                                 {profileData.posts.map((post) => (
                                     <div
                                         key={post.id}
-                                        className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer"
+                                        className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer border border-gray-200"
                                     >
                                         <img
                                             src={post.thumbnail}
@@ -194,7 +187,7 @@ export default function InstagramStalkerPage() {
                                             className="w-full h-full object-cover"
                                         />
                                         {post.isVideo && (
-                                            <div className="absolute top-2 right-2 bg-black/70 rounded-full p-1.5">
+                                            <div className="absolute top-2 right-2 bg-black/80 rounded-full p-1.5">
                                                 <svg
                                                     className="w-4 h-4 text-white"
                                                     fill="currentColor"
@@ -243,27 +236,27 @@ export default function InstagramStalkerPage() {
 
                 {/* Info Section */}
                 {!profileData && !loading && (
-                    <div className="mt-8 p-6 bg-dark-card/50 border border-dark-border rounded-lg">
-                        <h3 className="text-lg font-semibold mb-3 text-white">
+                    <div className="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-lg">
+                        <h3 className="text-lg font-semibold mb-3 text-gray-900">
                             How to use
                         </h3>
-                        <ul className="space-y-2 text-gray-400 text-sm">
+                        <ul className="space-y-2 text-gray-600 text-sm">
                             <li className="flex items-start gap-2">
-                                <span className="text-accent-purple mt-0.5">1.</span>
+                                <span className="text-blue-600 mt-0.5 font-semibold">1.</span>
                                 <span>Enter the Instagram username (without @)</span>
                             </li>
                             <li className="flex items-start gap-2">
-                                <span className="text-accent-purple mt-0.5">2.</span>
+                                <span className="text-blue-600 mt-0.5 font-semibold">2.</span>
                                 <span>Click "Stalk Profile" to fetch the data</span>
                             </li>
                             <li className="flex items-start gap-2">
-                                <span className="text-accent-purple mt-0.5">3.</span>
+                                <span className="text-blue-600 mt-0.5 font-semibold">3.</span>
                                 <span>View profile information and recent posts</span>
                             </li>
                         </ul>
-                        <div className="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/50 rounded-lg">
-                            <p className="text-yellow-400 text-xs">
-                                <strong>Note:</strong> Currently showing demo data. To enable real Instagram data, configure the Instagram API in the backend settings.
+                        <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded">
+                            <p className="text-amber-900 text-xs">
+                                <strong>Note:</strong> Currently showing real data.
                             </p>
                         </div>
                     </div>

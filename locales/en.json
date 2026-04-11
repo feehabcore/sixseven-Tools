@@ -47,6 +47,8 @@
         }
     },
     "auth": {
+        "comingSoon": "This feature is coming soon!",
+        "comingSoonDesc": "We're working hard to bring this feature to you. Please stay tuned!",
         "signupTitle": "Create Account",
         "loginTitle": "Welcome Back",
         "name": "Full Name",
@@ -61,10 +63,7 @@
         "haveAccount": "Already have an account?",
         "noAccount": "Don't have an account?",
         "loginLink": "Login here",
-        "signupLink": "Sign up here",
-        "orContinue": "Or continue with",
-        "google": "Google",
-        "facebook": "Facebook"
+        "signupLink": "Sign up here"
     },
     "profile": {
         "title": "My Profile",

@@ -120,14 +120,16 @@ export default function SocialDownloaderPage() {
         <div className="container mx-auto px-4 py-12">
             <div className="max-w-3xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-8">
-                    <div className="inline-block p-3 bg-gradient-to-br from-accent-green to-accent-blue rounded-xl mb-4">
-                        <span className="text-4xl">⬇️</span>
+                <div className="text-center mb-12">
+                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h3l-4 4-4-4h3z" />
+                        </svg>
                     </div>
-                    <h1 className="text-4xl font-bold mb-3 gradient-text">
+                    <h1 className="text-4xl font-bold mb-3 text-gray-900">
                         {t('tools.downloader.title')}
                     </h1>
-                    <p className="text-gray-400">
+                    <p className="text-gray-600">
                         {t('tools.downloader.description')}
                     </p>
                 </div>
@@ -138,7 +140,7 @@ export default function SocialDownloaderPage() {
                     {/* URL Input */}
                     <div className="space-y-4">
                         <div>
-                            <label htmlFor="url" className="block text-sm font-medium mb-2">
+                            <label htmlFor="url" className="block text-sm font-medium mb-2 text-gray-900">
                                 Video URL
                             </label>
                             <div className="relative">
@@ -157,7 +159,7 @@ export default function SocialDownloaderPage() {
                                 )}
                             </div>
                             {detectedPlatform && (
-                                <p className="text-sm text-accent-green mt-2">
+                                <p className="text-sm text-blue-600 mt-2 font-medium">
                                     ✓ Detected: {detectedPlatform.charAt(0).toUpperCase() + detectedPlatform.slice(1)}
                                 </p>
                             )}
@@ -165,7 +167,7 @@ export default function SocialDownloaderPage() {
 
                         {/* Format Selection */}
                         <div>
-                            <label className="block text-sm font-medium mb-3">
+                            <label className="block text-sm font-medium mb-3 text-gray-900">
                                 {t('tools.downloader.format')}
                             </label>
                             <div className="flex gap-4">
@@ -176,9 +178,9 @@ export default function SocialDownloaderPage() {
                                         value="mp4"
                                         checked={format === 'mp4'}
                                         onChange={(e) => setFormat(e.target.value)}
-                                        className="w-4 h-4 text-accent-blue"
+                                        className="w-4 h-4 text-blue-600"
                                     />
-                                    <span>{t('tools.downloader.video')}</span>
+                                    <span className="text-gray-700">{t('tools.downloader.video')}</span>
                                 </label>
                                 <label className="flex items-center gap-2 cursor-pointer">
                                     <input
@@ -187,9 +189,9 @@ export default function SocialDownloaderPage() {
                                         value="mp3"
                                         checked={format === 'mp3'}
                                         onChange={(e) => setFormat(e.target.value)}
-                                        className="w-4 h-4 text-accent-blue"
+                                        className="w-4 h-4 text-blue-600"
                                     />
-                                    <span>{t('tools.downloader.audio')}</span>
+                                    <span className="text-gray-700">{t('tools.downloader.audio')}</span>
                                 </label>
                             </div>
                         </div>
@@ -213,33 +215,33 @@ export default function SocialDownloaderPage() {
                 </div>
 
                 {/* Supported Platforms */}
-                <div className="mt-8 p-6 bg-dark-card/50 border border-dark-border rounded-lg">
-                    <h3 className="text-lg font-semibold mb-4 text-white">
+                <div className="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-lg">
+                    <h3 className="text-lg font-semibold mb-4 text-gray-900">
                         Supported Platforms
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                         {Object.entries(platformIcons).map(([platform, icon]) => (
                             <div
                                 key={platform}
-                                className="flex flex-col items-center gap-2 p-3 bg-dark-bg rounded-lg"
+                                className="flex flex-col items-center gap-2 p-3 bg-white rounded-lg border border-gray-200"
                             >
                                 <div className="flex items-center justify-center">
                                     {icon}
                                 </div>
-                                <span className="text-sm text-gray-400 capitalize">
+                                <span className="text-sm text-gray-600 capitalize">
                                     {platform}
                                 </span>
                             </div>
                         ))}
                     </div>
-                    <p className="text-sm text-gray-400 mt-4">
+                    <p className="text-sm text-gray-600 mt-4">
                         {t('tools.downloader.platforms')}
                     </p>
                 </div>
 
                 {/* Disclaimer */}
-                <div className="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/50 rounded-lg">
-                    <p className="text-yellow-400 text-sm">
+                <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                    <p className="text-amber-900 text-sm">
                         <strong>Disclaimer:</strong> Please respect copyright laws and platform terms of service. Only download content you have permission to use.
                     </p>
                 </div>
