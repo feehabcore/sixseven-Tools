@@ -8,35 +8,37 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                dark: {
-                    bg: '#0a0a0f',
-                    card: '#13131a',
-                    border: '#1f1f28',
-                },
-                accent: {
-                    blue: '#00d4ff',
-                    green: '#00ff88',
-                    purple: '#b84dff',
-                },
+                base:    '#07090f',
+                surface: '#0d1117',
+                indigo:  '#6C63FF',
+                cyan:    '#00D4FF',
+                rose:    '#FF4D8D',
+                violet:  '#9B59FF',
+                emerald: '#00E5A0',
             },
             fontFamily: {
+                sans:    ['Inter', 'Space Grotesk', 'system-ui', 'sans-serif'],
                 bengali: ['Li Ador Noirrit', 'Noto Sans Bengali', 'sans-serif'],
-                english: ['Inter', 'system-ui', 'sans-serif'],
             },
             animation: {
-                'fade-in': 'fadeIn 0.5s ease-in-out',
-                'slide-up': 'slideUp 0.5s ease-out',
-                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'fade-in-up': 'fadeInUp 0.7s ease both',
+                'drift':      'drift 18s ease-in-out infinite',
+                'pulse-dot':  'pulse-dot 2s ease-in-out infinite',
+                'spin-slow':  'spin 2s linear infinite',
             },
             keyframes: {
-                fadeIn: {
-                    '0%': { opacity: '0' },
-                    '100%': { opacity: '1' },
+                fadeInUp: {
+                    from: { opacity: '0', transform: 'translateY(28px)' },
+                    to:   { opacity: '1', transform: 'translateY(0)' },
                 },
-                slideUp: {
-                    '0%': { transform: 'translateY(20px)', opacity: '0' },
-                    '100%': { transform: 'translateY(0)', opacity: '1' },
+                drift: {
+                    '0%, 100%': { transform: 'translate(0,0) scale(1)' },
+                    '33%':      { transform: 'translate(40px,-30px) scale(1.05)' },
+                    '66%':      { transform: 'translate(-20px,20px) scale(0.96)' },
                 },
+            },
+            backdropBlur: {
+                xs: '2px',
             },
         },
     },

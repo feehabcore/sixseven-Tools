@@ -61,11 +61,24 @@ export default function SocialDownloaderPage() {
             }
 
             // Download the file
+            let filename = `download_${Date.now()}.${format === 'mp3' ? 'mp3' : 'mp4'}`;
+            const disposition = res.headers.get('Content-Disposition');
+            if (disposition && disposition.includes('filename=')) {
+                const match = disposition.match(/filename\*?=(?:UTF-8'')?["']?([^"';]+)["']?/i);
+                if (match && match[1]) {
+                    try {
+                        filename = decodeURIComponent(match[1]);
+                    } catch (_) {
+                        filename = match[1];
+                    }
+                }
+            }
+
             const blob = await res.blob();
             const downloadUrl = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = downloadUrl;
-            link.download = `download_${Date.now()}.${format === 'mp3' ? 'mp3' : 'mp4'}`;
+            link.download = filename;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);

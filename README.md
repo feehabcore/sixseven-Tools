@@ -307,7 +307,7 @@ For issues, feature requests, or questions, please open an issue on GitHub.
 
 ## 👨‍💻 Developed by
 
-**FEEHAB** - All Rights Reserved 2026
+**Fihab** - All Rights Reserved 2026
 
 ---
 

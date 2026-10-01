@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
+import { Readable } from 'stream';
 import { downloadMedia } from '@/lib/downloaders';
 import { isValidUrl, detectPlatform } from '@/lib/utils';
+
+export const dynamic = 'force-dynamic';
+export const maxDuration = 120; // Support up to 2 min downloads
 
 export async function POST(request) {
     try {
@@ -30,23 +34,19 @@ export async function POST(request) {
         }
 
         // Download media
-        const { stream, filename, mimeType } = await downloadMedia(url, format || 'mp4');
+        const { stream, filename, mimeType, size } = await downloadMedia(url, format || 'mp4');
 
-        // Set up response headers for file download
+        // Set up response headers
         const headers = new Headers();
-        headers.set('Content-Disposition', `attachment; filename="${filename}"`);
+        headers.set('Content-Disposition', `attachment; filename="${encodeURIComponent(filename)}"; filename*=UTF-8''${encodeURIComponent(filename)}`);
         headers.set('Content-Type', mimeType);
-
-        // Convert stream to response
-        // Note: In a production environment, you might want to use streaming responses
-        // For now, we'll buffer the stream
-        const chunks = [];
-        for await (const chunk of stream) {
-            chunks.push(chunk);
+        if (size) {
+            headers.set('Content-Length', size.toString());
         }
-        const buffer = Buffer.concat(chunks);
 
-        return new NextResponse(buffer, {
+        const webStream = Readable.toWeb(stream);
+
+        return new NextResponse(webStream, {
             status: 200,
             headers,
         });
