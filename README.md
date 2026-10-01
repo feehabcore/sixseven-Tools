@@ -486,4 +486,4 @@ All rights reserved © 2026 67
 
 ---
 
-**Built with ❤️ using Next.js and Tailwind CSS**
+
